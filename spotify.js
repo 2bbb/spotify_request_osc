@@ -54,7 +54,7 @@ async function addTrack(uri) {
             [ uri ]
         );
     } catch(err) {
-        console.error('error on addTrack', err);
+        console.error('error on addTrack: ', err);
     }
 }
 const OSC = require('node-osc');
@@ -66,7 +66,7 @@ async function main() {
         access_token = await login();
         spotifyApi.setAccessToken(access_token);
     } catch(err) {
-        console.log('Something went wrong!', err.message);
+        console.log('Something went wrong!: ', err.message);
     }
     setInterval(async () => {
         try {
@@ -74,7 +74,7 @@ async function main() {
             spotifyApi.setAccessToken(response.body.access_token);
             console.log('access token is refreshed');
         } catch(err) {
-            console.error('failure to refresh access token');
+            console.error('failure to refresh access token:', err);
         }
     }, 120000);
     server.on('message', ([address, ...packet], rinfo) => {

@@ -1,7 +1,7 @@
 module.exports = {
     clientId: 'CLIENT-ID', // replace
     clientSecret: 'CLIENT-SECRET', // replace
-    redirectUri: 'http://localhost:3000/callback', // add to callback url
+    redirectUri: 'http://localhost:3000/callback', // add to redirect url
     scopes: [
         'user-read-private',
         'playlist-modify-public',
