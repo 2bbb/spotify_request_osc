@@ -49,6 +49,7 @@ async function addTrack(uri) {
         console.log('failure to refresh');
     }
     try {
+        console.log('track will be added: ', uri);
         const response = await spotifyApi.addTracksToPlaylist(
             setting.playlist_id,
             [ uri ]
